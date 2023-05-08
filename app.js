@@ -8,7 +8,7 @@ const app = express();
 
 //Settings
 app.set("port", 3000);
-app.use(morgan(""dev));
+app.use(morgan("dev"));
 
 //ruta
 app.use("/generatePasswords", indexRoutes);
