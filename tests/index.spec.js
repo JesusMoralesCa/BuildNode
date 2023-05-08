@@ -1,4 +1,4 @@
-import app from "./app.js";
+import app from "../app.js";
 
 describe("Test server initialization", () => {
   it("should start the server on the specified port", async () => {
