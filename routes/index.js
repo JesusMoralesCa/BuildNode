@@ -1,5 +1,5 @@
 import { Router } from "express";
-import generator from "./../utils/passwordGenerator.js";
+import generator from "./../utils/passwordsGenerator.js";
 
 const router = Router();
 
