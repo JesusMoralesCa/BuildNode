@@ -1,8 +1,6 @@
 @Library('java-node') _
 pipeline {
-    agent {
-        label('master')
-    }
+    agent any
     tools {
         nodejs 'Node'
     }
