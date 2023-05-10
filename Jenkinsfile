@@ -12,7 +12,7 @@ pipeline {
     }
     
    stages {
-        stage('Read properties and checkout') {
+        stage('Read properties') {
             steps {
                 script {
                     def file = readProperties file: 'project.properties'
@@ -22,15 +22,31 @@ pipeline {
             }
         }
 
+ stage('Test') {
+            steps {
+                  NodeInstall()
+                  NodeTestJest()
+            }
+        }
+    }
+       
 stage('Build') {
             steps {
-                
-                  W2Build()
-                
+                  DockerBuild()
             }
         }
     }
     
+stage('Deploy') {
+            steps {
+                  DockerHubLogin()
+                  DockerPush()
+            }
+        }
+    }
+
+
+
     post {
         always {
             sh 'docker logout'
