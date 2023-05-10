@@ -24,9 +24,9 @@ pipeline {
 
 stage('Build') {
             steps {
-                script {
+                
                   W2Build()
-                }
+                
             }
         }
     }
