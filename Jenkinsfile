@@ -28,14 +28,13 @@ pipeline {
                   NodeTestJest()
             }
         }
-    }
-       
+
 stage('Build') {
             steps {
                   DockerBuild()
             }
         }
-    }
+    
     
 stage('Deploy') {
             steps {
@@ -43,10 +42,9 @@ stage('Deploy') {
                   DockerPush()
             }
         }
+
     }
-
-
-
+       
     post {
         always {
             sh 'docker logout'
