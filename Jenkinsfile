@@ -38,8 +38,6 @@ stage('Build') {
     
 stage('Deploy') {
             steps {
-                  def file = readProperties file: 'project.properties'
-                  env.image = file['imageName']
                   DockerHubLogin()
                   DockerPush()
             }
